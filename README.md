@@ -279,7 +279,7 @@ To demonstrate the tool's capabilities, a sample report generated from a synthet
 
 This is an interactive HTML report which contains the stability plots for each binned feature.
 
-* [**View Sample Report**](https://rao-anas-riaz.github.io/R-Feature-Binning-Rpart-SQL-Case-Statements/report_outputs/feature_report.html)
+* [**View Sample Report**](https://rao-anas-riaz.github.io/R-Feature-Binning-Rpart-SQL-Case-Statements/report_outputs/binning_report.html)
 
 **Summary Statistics (CSV)**
 
@@ -308,6 +308,7 @@ The script will automatically check for and offer to install the following requi
 
 ### License
 This project is made available for informational purposes only. The intellectual property and source code remain the exclusive property of the author. No part of the source code may be copied, distributed, or modified without explicit permission.
+
 
 
 
