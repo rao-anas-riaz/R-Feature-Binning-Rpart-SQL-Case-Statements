@@ -149,7 +149,7 @@ The pipeline executes a sophisticated, multi-phase process. This diagram details
 ```
 ***
 
-## The Architecture: Core Functions and Logic
+## The Architecture Core Functions and Logic
 
 The pipeline's power stems from its modular design, where each script is a specialized engine for a specific task.
 
@@ -308,5 +308,6 @@ The script will automatically check for and offer to install the following requi
 
 ### License
 This project is made available for informational purposes only. The intellectual property and source code remain the exclusive property of the author. No part of the source code may be copied, distributed, or modified without explicit permission.
+
 
 
