@@ -2,30 +2,28 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-R-blue.svg" alt="Language R">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen.svg" alt="Status: Active">
 </p>
 
 A powerful, end-to-end R pipeline that transforms raw data into robust, production-ready binned features. It automates the entire feature engineering workflow: from data analysis and supervised binning to generating deployable SQL `CASE` statements and interactive stability reports. Go from raw data to actionable, stable features in a single command.
 
 ***
 
-## 📜 Table of Contents
-* [🌟 Why This Pipeline is a Game-Changer](#-why-this-pipeline-is-a-game-changer)
-* [📊 Ultra-Detailed Workflow Diagram](#-ultra-detailed-workflow-diagram)
-* [🛠️ The Architecture: Core Functions & Logic](#️-the-architecture-core-functions--logic)
-* [⚙️ Parameter Deep Dive](#️-parameter-deep-dive)
-* [📦 Understanding the Outputs](#-understanding-the-outputs)
-* [🚀 Getting Started: A Practical Guide](#-getting-started-a-practical-guide)
+## Table of Contents
+* [Why This Pipeline is a Game-Changer](#why-this-pipeline-is-a-game-changer)
+* [Ultra-Detailed Workflow Diagram](#ultra-detailed-workflow-diagram)
+* [The Architecture: Core Functions & Logic](#️the-architecture-core-functions-and-logic)
+* [Parameter Deep Dive](#️parameter-deep-dive)
+* [Understanding the Outputs](#understanding-the-outputs)
+* [Getting Started: A Practical Guide](#getting-started-a-practical-guide)
 * [Dependencies](#dependencies)
 
 ***
 
-## 🌟 Why This Pipeline is a Game-Changer
+## Why This Pipeline is a Game Changer
 
 This isn't just a binning script; it's a comprehensive feature engineering and MLOps accelerator. It automates the complex, iterative, and critical process of creating features that are not only predictive but also stable and ready for production deployment.
 
-### For Data Scientists & ML Engineers 👩‍🔬
+### For Data Scientists & ML Engineers
 * **Massively Accelerate Feature Engineering:** The most time-consuming part of modeling is often creating meaningful features. This pipeline automates the entire process of supervised binning, allowing you to generate dozens of high-quality features in minutes, not days.
 * **Capture Non-Linearity Effortlessly:** By using a decision tree (`rpart`) for binning, the pipeline automatically discovers non-linear relationships between your features and the target variable. It finds the optimal splits in the data that you might miss with manual binning or bucketing.
 * **Build More Robust Models:**
@@ -34,19 +32,19 @@ This isn't just a binning script; it's a comprehensive feature engineering and M
     * **Improves Interpretability:** A model built on 5-10 binned groups for a feature is far easier to explain to stakeholders than a model with hundreds of raw categories or complex continuous coefficients.
 * **Proactive Model Monitoring Foundation:** The generated stability plots are a powerful tool for detecting data and concept drift. You can see precisely when a feature's distribution shifts or its predictive relationship with the target degrades, signaling that your model may need retraining.
 
-### For Data & Analytics Engineers 🧑‍💻
+### For Data & Analytics Engineers
 * **Bridge the Gap to Production:** The single biggest challenge in MLOps is often translating a model's logic from a notebook (R/Python) into production-ready SQL. This pipeline solves that by **automatically generating the exact `CASE` statements** needed to replicate the feature logic in any standard SQL database.
 * **Standardize Feature Creation:** Ensures that every feature is created using a consistent, reproducible, and version-controllable process. This eliminates the "it works on my machine" problem and enforces best practices across the team.
 * **ETL & Data Pipeline Validation:** The detailed `feature_summary.csv` and stability reports can be used to validate data quality and distributions at various points in your data pipelines, ensuring data integrity from source to model.
 
-### For Team Leads & Analytics Managers 🤵
+### For Team Leads & Analytics Managers
 * **Increase Team Velocity & ROI:** By automating a major analytics bottleneck, this pipeline frees up your highly skilled data scientists to focus on higher-value tasks like model selection, tuning, and solving new business problems, dramatically shortening project timelines.
 * **Demystify Feature Engineering:** The interactive HTML report and clear SQL logic make the feature creation process transparent and understandable, reducing the "black box" nature of modeling and fostering better collaboration between technical teams and business stakeholders.
 * **Enhance Reproducibility and Governance:** Provides a fully logged, auditable trail of how features were created, which is critical for governance, compliance, and debugging production models.
 
 ***
 
-## 📊 Ultra-Detailed Workflow Diagram
+## Ultra Detailed Workflow Diagram
 
 The pipeline executes a sophisticated, multi-phase process. This diagram details every logical step from raw data to final outputs.
 
@@ -151,7 +149,7 @@ The pipeline executes a sophisticated, multi-phase process. This diagram details
 ```
 ***
 
-## 🛠️ The Architecture: Core Functions & Logic
+## The Architecture: Core Functions and Logic
 
 The pipeline's power stems from its modular design, where each script is a specialized engine for a specific task.
 
@@ -175,7 +173,7 @@ The pipeline's power stems from its modular design, where each script is a speci
 
 ***
 
-## ⚙️ Parameter Deep Dive
+## Parameter Deep Dive
 
 The main `auto_feature_binning` function is highly tunable. Mastering these parameters allows you to precisely control the binning process.
 
@@ -195,7 +193,7 @@ The main `auto_feature_binning` function is highly tunable. Mastering these para
 
 ***
 
-## 📦 Understanding the Outputs
+## Understanding the Outputs
 
 The script generates four mission-critical files in your specified `output_dir`:
 
@@ -218,7 +216,7 @@ The script generates four mission-critical files in your specified `output_dir`:
 
 ***
 
-## 🚀 Getting Started: A Practical Guide
+## Getting Started: A Practical Guide
 
 1.  **File Structure**: Place all the downloaded `.R` script files into a sub-directory named `source`. Your main script should be in the parent directory.
 
@@ -310,3 +308,4 @@ The script will automatically check for and offer to install the following requi
 
 ### License
 This project is made available for informational purposes only. The intellectual property and source code remain the exclusive property of the author. No part of the source code may be copied, distributed, or modified without explicit permission.
+
