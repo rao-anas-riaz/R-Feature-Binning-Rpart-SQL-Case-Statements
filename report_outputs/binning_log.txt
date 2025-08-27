@@ -1,0 +1,507 @@
+[2025-08-25 16:41:20] INFO: Starting feature binning report generation.
+[2025-08-25 16:41:20] INFO: Script execution begins with provided parameters.
+[2025-08-25 16:41:20] DEBUG: Parameters: output_dir='output', target_col='price', unique_val_threshold=10
+[2025-08-25 16:41:20] INFO: Loading required libraries.
+[2025-08-25 16:41:20] INFO: All required packages loaded successfully.
+[2025-08-25 16:41:20] INFO: Starting Phase 3: Data Preparation and Feature Summary.
+[2025-08-25 16:41:20] DEBUG: Converting input data to data.table.
+[2025-08-25 16:41:20] DEBUG: Standardizing all column names to lower case.
+[2025-08-25 16:41:20] INFO: Clipping the target metric: price
+[2025-08-25 16:41:20] DEBUG: Target metric clipping quantiles calculated. Lower:  147.055941502368 , Upper:  322.562717135608
+[2025-08-25 16:41:20] DEBUG: Target metric clipped between 147.055941502368 and 322.562717135608
+[2025-08-25 16:41:20] INFO: Running initial data type detection on all columns.
+[2025-08-25 16:41:20] INFO: Entering function 'detect_data_types'. Analyzing 18 features to infer their data types.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'order_date'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'order_date': Filtered 5000 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'order_date': Time component (':') detected: FALSE.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'order_date' detected as 'date' type (100.00% success rate).
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'price'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'price': Filtered 5000 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'price' detected as 'numeric' type (decimal or floating point).
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'character_dominant'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_dominant': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_dominant': Time component (':') detected: FALSE.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_dominant' defaulted to 'character' type after specific type checks.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'character_all_high'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_all_high': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_all_high': Time component (':') detected: FALSE.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_all_high' defaulted to 'character' type after specific type checks.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'character_some_low'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_some_low': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_some_low': Time component (':') detected: FALSE.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_some_low' defaulted to 'character' type after specific type checks.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'character_random'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_random': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_random': Time component (':') detected: FALSE.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'character_random' defaulted to 'character' type after specific type checks.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'numeric_dominant'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_dominant': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_dominant' detected as 'numeric' type (decimal or floating point).
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'numeric_all_high'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_all_high': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_all_high' detected as 'numeric' type (decimal or floating point).
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'numeric_some_low'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_some_low': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_some_low' detected as 'numeric' type (decimal or floating point).
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'numeric_random'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_random': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'numeric_random' detected as 'numeric' type (decimal or floating point).
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'integer_dominant'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_dominant': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_dominant' detected as 'integer' type.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'integer_all_high'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_all_high': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_all_high' detected as 'integer' type.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'integer_some_low'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_some_low': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_some_low' detected as 'integer' type.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'integer_random'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_random': Filtered 4500 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'integer_random' detected as 'integer' type.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'char_binary'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'char_binary': Filtered 4488 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'char_binary': Time component (':') detected: FALSE.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'char_binary' defaulted to 'character' type after specific type checks.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'char_binary' detected as 'character-logical' type based on unique values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'num_binary'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'num_binary': Filtered 4444 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'num_binary' detected as 'integer' type.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'num_binary' detected as 'integer-logical' type based on unique values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'int_binary'. Extracting column data.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'int_binary': Filtered 4783 non-empty/non-null values.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Feature 'int_binary' detected as 'integer' type.
+[2025-08-25 16:41:20] DEBUG: [detect_data_types] Processing feature: 'registration_date'. Extracting column data.
+[2025-08-25 16:41:21] DEBUG: [detect_data_types] Feature 'registration_date': Filtered 4750 non-empty/non-null values.
+[2025-08-25 16:41:21] DEBUG: [detect_data_types] Feature 'registration_date': Time component (':') detected: FALSE.
+[2025-08-25 16:41:21] DEBUG: [detect_data_types] Feature 'registration_date' detected as 'date' type (100.00% success rate).
+[2025-08-25 16:41:21] INFO: Exiting function 'detect_data_types'. All specified features processed.
+[2025-08-25 16:41:21] DEBUG: Data type detection completed.
+[2025-08-25 16:41:21] INFO: Identifying datetime feature to convert to numeric.
+[2025-08-25 16:41:21] INFO: Datetime features identified: registration_date
+[2025-08-25 16:41:21] DEBUG: Entering convert_date function with frequency: weeks
+[2025-08-25 16:41:21] DEBUG: Converting registration_date to weeks_since feature.
+[2025-08-25 16:41:21] DEBUG: All datetime features successfully converted to numeric with prefix: weeks_since_registration_date
+[2025-08-25 16:41:21] INFO: Detecting data types for newly created datetime-derived numeric features.
+[2025-08-25 16:41:21] INFO: Entering function 'detect_data_types'. Analyzing 1 features to infer their data types.
+[2025-08-25 16:41:21] DEBUG: [detect_data_types] Processing feature: 'weeks_since_registration_date'. Extracting column data.
+[2025-08-25 16:41:21] DEBUG: [detect_data_types] Feature 'weeks_since_registration_date': Filtered 4750 non-empty/non-null values.
+[2025-08-25 16:41:21] DEBUG: [detect_data_types] Feature 'weeks_since_registration_date' detected as 'numeric' type (decimal or floating point).
+[2025-08-25 16:41:21] INFO: Exiting function 'detect_data_types'. All specified features processed.
+[2025-08-25 16:41:21] DEBUG: Appended new feature types to the main type summary table.
+[2025-08-25 16:41:21] INFO: Generating detailed summary for each feature.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'order_date'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'order_date': Number of unique non-NA unique values = 101, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'order_date': Null percentages - Logical NA: 0.00%, Char NA: 0.00%, Empty String: 0.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'order_date': Top 10 categories identified. Top category percentage: 1.48%. All top N percentages: 1.48, 1.4, 1.34, 1.3, 1.28, 1.28, 1.24, 1.24, 1.22, 1.2.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'price'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'price': Number of unique non-NA unique values = 4902, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'price': Null percentages - Logical NA: 0.00%, Char NA: 0.00%, Empty String: 0.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'price': Top 10 categories identified. Top category percentage: 1.00%. All top N percentages: 1, 1, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'character_dominant'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_dominant': Number of unique non-NA unique values = 179, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_dominant': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_dominant': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 1.2, 1.16, 1.16, 1.08, 1.06, 1.06, 1.06.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'character_all_high'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_all_high': Number of unique non-NA unique values = 30, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_all_high': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_all_high': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 4.78, 4.68, 4.62, 4.36, 4.36, 4.26, 4.18, 3.9, 3.6.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'character_some_low'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_some_low': Number of unique non-NA unique values = 224, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_some_low': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_some_low': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 0.82, 0.8, 0.78, 0.76, 0.74, 0.74, 0.72.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'character_random'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_random': Number of unique non-NA unique values = 172, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_random': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'character_random': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 0.78, 0.78, 0.78, 0.76, 0.74, 0.74, 0.74.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'numeric_dominant'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_dominant': Number of unique non-NA unique values = 159, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_dominant': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_dominant': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 1.46, 1.26, 1.2, 1.2, 1.18, 1.16, 1.16.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'numeric_all_high'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_all_high': Number of unique non-NA unique values = 30, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_all_high': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_all_high': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 4.82, 4.34, 4.32, 4.22, 4.22, 4.12, 4.08, 4.02, 4.02.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'numeric_some_low'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_some_low': Number of unique non-NA unique values = 287, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_some_low': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_some_low': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 0.8, 0.7, 0.68, 0.66, 0.66, 0.66, 0.62.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'numeric_random'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_random': Number of unique non-NA unique values = 186, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_random': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'numeric_random': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0.66.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'integer_dominant'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_dominant': Number of unique non-NA unique values = 156, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_dominant': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_dominant': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 1.54, 1.5, 1.5, 1.36, 1.26, 1.2, 1.12.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'integer_all_high'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_all_high': Number of unique non-NA unique values = 30, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_all_high': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_all_high': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 4.6, 4.52, 4.38, 4.34, 4.22, 4.16, 4.1, 3.9, 3.86.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'integer_some_low'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_some_low': Number of unique non-NA unique values = 123, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_some_low': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_some_low': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 2.26, 2.02, 1.82, 1.5, 1.4, 1.36, 1.32.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'integer_random'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_random': Number of unique non-NA unique values = 100, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_random': Null percentages - Logical NA: 2.50%, Char NA: 2.50%, Empty String: 5.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'integer_random': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 2.5, 2.5, 1.92, 1.82, 1.76, 1.58, 1.52, 1.14, 1.14.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'char_binary'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'char_binary': Number of unique non-NA unique values = 2, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'char_binary': Null percentages - Logical NA: 3.36%, Char NA: 3.02%, Empty String: 3.86%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'char_binary': Top 5 categories identified. Top category percentage: 44.88%. All top N percentages: 44.88, 44.88, 3.86, 3.36, 3.02.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'num_binary'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'num_binary': Number of unique non-NA unique values = 2, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'num_binary': Null percentages - Logical NA: 5.74%, Char NA: 0.00%, Empty String: 5.38%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'num_binary': Top 4 categories identified. Top category percentage: 48.90%. All top N percentages: 48.9, 39.98, 5.74, 5.38.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'int_binary'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'int_binary': Number of unique non-NA unique values = 3, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'int_binary': Null percentages - Logical NA: 4.34%, Char NA: 0.00%, Empty String: 0.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'int_binary': Top 4 categories identified. Top category percentage: 60.70%. All top N percentages: 60.7, 29.64, 5.32, 4.34.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'registration_date'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'registration_date': Number of unique non-NA unique values = 365, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'registration_date': Null percentages - Logical NA: 5.00%, Char NA: 0.00%, Empty String: 0.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'registration_date': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 0.46, 0.46, 0.46, 0.44, 0.44, 0.44, 0.44, 0.44, 0.44.
+[2025-08-25 16:41:21] INFO: Entering function 'summarize_feature' for feature: 'weeks_since_registration_date'.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'weeks_since_registration_date': Number of unique non-NA unique values = 450, Is primary key = FALSE.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'weeks_since_registration_date': Null percentages - Logical NA: 5.00%, Char NA: 0.00%, Empty String: 0.00%.
+[2025-08-25 16:41:21] DEBUG: [summarize_feature] Feature 'weeks_since_registration_date': Top 10 categories identified. Top category percentage: 5.00%. All top N percentages: 5, 0.52, 0.46, 0.44, 0.44, 0.42, 0.4, 0.4, 0.4, 0.4.
+[2025-08-25 16:41:21] DEBUG: Feature summary generation complete.
+[2025-08-25 16:41:21] INFO: Feature summary complete and saved to: output/feature_summary.csv
+[2025-08-25 16:41:21] INFO: Starting Phase 4: Feature Binning and generating SQL Ready Case Statements.
+[2025-08-25 16:41:21] INFO: 14 features identified for potential binning.
+[2025-08-25 16:41:21] DEBUG: Binomial features: 
+[2025-08-25 16:41:21] DEBUG: Numeric features: integer_all_high, integer_dominant, integer_random, integer_some_low, numeric_all_high, numeric_dominant, numeric_random, numeric_some_low, weeks_since_registration_date
+[2025-08-25 16:41:21] DEBUG: Character features: character_all_high, character_dominant, character_random, character_some_low
+[2025-08-25 16:41:21] INFO: Configuring rpart control parameters.
+[2025-08-25 16:41:21] DEBUG: rpart parameters set: minsplit= 50 , minbucket= 25 , cp= 0.001
+[2025-08-25 16:41:21] INFO: Starting binning for 9 numeric features.
+[2025-08-25 16:41:21] INFO: Starting numeric feature binning
+[2025-08-25 16:41:21] INFO: Binning numeric feature: integer_all_high
+[2025-08-25 16:41:21] DEBUG: Cleaning and standardizing missing values for ' integer_all_high '.
+[2025-08-25 16:41:21] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:21] DEBUG: Training rpart tree for ' integer_all_high '.
+[2025-08-25 16:41:21] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:21] DEBUG: Created binned column ' binned_integer_all_high '.
+[2025-08-25 16:41:21] DEBUG: Identified 1 split points from the tree.
+[2025-08-25 16:41:21] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:21] DEBUG: Building standard numeric SQL for ' integer_all_high '.
+[2025-08-25 16:41:21] DEBUG: SQL CASE statement for ' integer_all_high ' finalized.
+[2025-08-25 16:41:21] INFO: Binning numeric feature: integer_dominant
+[2025-08-25 16:41:21] DEBUG: Cleaning and standardizing missing values for ' integer_dominant '.
+[2025-08-25 16:41:21] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:21] DEBUG: Training rpart tree for ' integer_dominant '.
+[2025-08-25 16:41:21] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:21] DEBUG: Created binned column ' binned_integer_dominant '.
+[2025-08-25 16:41:21] WARN: No splits found for ' integer_dominant '. The feature may have no predictive power. Using a fallback.
+[2025-08-25 16:41:21] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:21] DEBUG: Building standard numeric SQL for ' integer_dominant '.
+[2025-08-25 16:41:21] DEBUG: SQL CASE statement for ' integer_dominant ' finalized.
+[2025-08-25 16:41:21] INFO: Binning numeric feature: integer_random
+[2025-08-25 16:41:21] DEBUG: Cleaning and standardizing missing values for ' integer_random '.
+[2025-08-25 16:41:21] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:21] DEBUG: Training rpart tree for ' integer_random '.
+[2025-08-25 16:41:21] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:21] DEBUG: Created binned column ' binned_integer_random '.
+[2025-08-25 16:41:21] DEBUG: Identified 5 split points from the tree.
+[2025-08-25 16:41:21] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:21] DEBUG: Building standard numeric SQL for ' integer_random '.
+[2025-08-25 16:41:21] DEBUG: SQL CASE statement for ' integer_random ' finalized.
+[2025-08-25 16:41:21] INFO: Binning numeric feature: integer_some_low
+[2025-08-25 16:41:21] DEBUG: Cleaning and standardizing missing values for ' integer_some_low '.
+[2025-08-25 16:41:21] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:21] DEBUG: Training rpart tree for ' integer_some_low '.
+[2025-08-25 16:41:21] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:21] DEBUG: Created binned column ' binned_integer_some_low '.
+[2025-08-25 16:41:21] DEBUG: Identified 7 split points from the tree.
+[2025-08-25 16:41:21] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:21] DEBUG: Building standard numeric SQL for ' integer_some_low '.
+[2025-08-25 16:41:21] DEBUG: SQL CASE statement for ' integer_some_low ' finalized.
+[2025-08-25 16:41:21] INFO: Binning numeric feature: numeric_all_high
+[2025-08-25 16:41:21] DEBUG: Cleaning and standardizing missing values for ' numeric_all_high '.
+[2025-08-25 16:41:21] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:21] DEBUG: Training rpart tree for ' numeric_all_high '.
+[2025-08-25 16:41:21] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:21] DEBUG: Created binned column ' binned_numeric_all_high '.
+[2025-08-25 16:41:21] DEBUG: Identified 2 split points from the tree.
+[2025-08-25 16:41:21] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:21] DEBUG: Building standard numeric SQL for ' numeric_all_high '.
+[2025-08-25 16:41:21] DEBUG: SQL CASE statement for ' numeric_all_high ' finalized.
+[2025-08-25 16:41:21] INFO: Binning numeric feature: numeric_dominant
+[2025-08-25 16:41:21] DEBUG: Cleaning and standardizing missing values for ' numeric_dominant '.
+[2025-08-25 16:41:21] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:21] DEBUG: Training rpart tree for ' numeric_dominant '.
+[2025-08-25 16:41:21] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:21] DEBUG: Created binned column ' binned_numeric_dominant '.
+[2025-08-25 16:41:21] DEBUG: Identified 3 split points from the tree.
+[2025-08-25 16:41:21] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:21] DEBUG: Building standard numeric SQL for ' numeric_dominant '.
+[2025-08-25 16:41:21] DEBUG: SQL CASE statement for ' numeric_dominant ' finalized.
+[2025-08-25 16:41:21] INFO: Binning numeric feature: numeric_random
+[2025-08-25 16:41:21] DEBUG: Cleaning and standardizing missing values for ' numeric_random '.
+[2025-08-25 16:41:21] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:21] DEBUG: Training rpart tree for ' numeric_random '.
+[2025-08-25 16:41:22] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:22] DEBUG: Created binned column ' binned_numeric_random '.
+[2025-08-25 16:41:22] DEBUG: Identified 9 split points from the tree.
+[2025-08-25 16:41:22] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:22] DEBUG: Building standard numeric SQL for ' numeric_random '.
+[2025-08-25 16:41:22] DEBUG: SQL CASE statement for ' numeric_random ' finalized.
+[2025-08-25 16:41:22] INFO: Binning numeric feature: numeric_some_low
+[2025-08-25 16:41:22] DEBUG: Cleaning and standardizing missing values for ' numeric_some_low '.
+[2025-08-25 16:41:22] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:22] DEBUG: Training rpart tree for ' numeric_some_low '.
+[2025-08-25 16:41:22] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:22] DEBUG: Created binned column ' binned_numeric_some_low '.
+[2025-08-25 16:41:22] DEBUG: Identified 2 split points from the tree.
+[2025-08-25 16:41:22] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:22] DEBUG: Building standard numeric SQL for ' numeric_some_low '.
+[2025-08-25 16:41:22] DEBUG: SQL CASE statement for ' numeric_some_low ' finalized.
+[2025-08-25 16:41:22] INFO: Binning numeric feature: weeks_since_registration_date
+[2025-08-25 16:41:22] DEBUG: Cleaning and standardizing missing values for ' weeks_since_registration_date '.
+[2025-08-25 16:41:22] DEBUG: Preparing data for rpart tree training.
+[2025-08-25 16:41:22] DEBUG: Training rpart tree for ' weeks_since_registration_date '.
+[2025-08-25 16:41:22] DEBUG: Assigned tree leaf nodes to the main dataframe.
+[2025-08-25 16:41:22] DEBUG: Created binned column ' binned_weeks_since_registration_date '.
+[2025-08-25 16:41:22] DEBUG: Identified 4 split points from the tree.
+[2025-08-25 16:41:22] INFO: Building SQL CASE statement.
+[2025-08-25 16:41:22] DEBUG: Building datetime-specific SQL for ' weeks_since_registration_date '.
+[2025-08-25 16:41:22] DEBUG: SQL CASE statement for ' weeks_since_registration_date ' finalized.
+[2025-08-25 16:41:22] INFO: All numeric features binned. Exiting numeric feature binning.
+[2025-08-25 16:41:22] INFO: Numeric feature binning complete.
+[2025-08-25 16:41:22] INFO: Starting binning for 4 character features.
+[2025-08-25 16:41:22] INFO: Starting character feature binning
+[2025-08-25 16:41:22] INFO: Binning character feature: character_all_high
+[2025-08-25 16:41:22] DEBUG: Created temporary column: character_all_high_tmp
+[2025-08-25 16:41:22] DEBUG: Standardizing missing values (NA, NULL, '', etc.) to NA.
+[2025-08-25 16:41:22] DEBUG: Grouping small categories for ' character_all_high ' with threshold 0.5 %
+[2025-08-25 16:41:22] DEBUG: No categories fell below the smalls threshold.
+[2025-08-25 16:41:22] DEBUG: Performing mean target encoding.
+[2025-08-25 16:41:22] DEBUG: Training rpart regression tree for ' character_all_high '.
+[2025-08-25 16:41:22] DEBUG: Tree training complete. Found 1 bins.
+[2025-08-25 16:41:22] DEBUG: Merging bin assignments back into the main dataframe.
+[2025-08-25 16:41:22] DEBUG: Assigning 'smalls' and other unmapped values to bin 2
+[2025-08-25 16:41:22] INFO: Building SQL CASE statement for ' character_all_high '.
+[2025-08-25 16:41:22] DEBUG: Generating WHEN clauses for each bin.
+[2025-08-25 16:41:22] DEBUG: SQL statement for ' character_all_high ' finalized.
+[2025-08-25 16:41:22] INFO: Binning character feature: character_dominant
+[2025-08-25 16:41:22] DEBUG: Created temporary column: character_dominant_tmp
+[2025-08-25 16:41:22] DEBUG: Standardizing missing values (NA, NULL, '', etc.) to NA.
+[2025-08-25 16:41:22] DEBUG: Grouping small categories for ' character_dominant ' with threshold 0.5 %
+[2025-08-25 16:41:22] DEBUG: 82 categories identified as 'smalls'.
+[2025-08-25 16:41:22] DEBUG: Performing mean target encoding.
+[2025-08-25 16:41:22] DEBUG: Training rpart regression tree for ' character_dominant '.
+[2025-08-25 16:41:22] DEBUG: Tree training complete. Found 3 bins.
+[2025-08-25 16:41:22] DEBUG: Merging bin assignments back into the main dataframe.
+[2025-08-25 16:41:22] DEBUG: Assigning 'smalls' and other unmapped values to bin 4
+[2025-08-25 16:41:22] INFO: Building SQL CASE statement for ' character_dominant '.
+[2025-08-25 16:41:22] DEBUG: Generating WHEN clauses for each bin.
+[2025-08-25 16:41:22] DEBUG: SQL statement for ' character_dominant ' finalized.
+[2025-08-25 16:41:22] INFO: Binning character feature: character_random
+[2025-08-25 16:41:22] DEBUG: Created temporary column: character_random_tmp
+[2025-08-25 16:41:22] DEBUG: Standardizing missing values (NA, NULL, '', etc.) to NA.
+[2025-08-25 16:41:22] DEBUG: Grouping small categories for ' character_random ' with threshold 0.5 %
+[2025-08-25 16:41:22] DEBUG: 42 categories identified as 'smalls'.
+[2025-08-25 16:41:22] DEBUG: Performing mean target encoding.
+[2025-08-25 16:41:22] DEBUG: Training rpart regression tree for ' character_random '.
+[2025-08-25 16:41:22] DEBUG: Tree training complete. Found 4 bins.
+[2025-08-25 16:41:22] DEBUG: Merging bin assignments back into the main dataframe.
+[2025-08-25 16:41:22] DEBUG: Assigning 'smalls' and other unmapped values to bin 5
+[2025-08-25 16:41:22] INFO: Building SQL CASE statement for ' character_random '.
+[2025-08-25 16:41:22] DEBUG: Generating WHEN clauses for each bin.
+[2025-08-25 16:41:22] DEBUG: SQL statement for ' character_random ' finalized.
+[2025-08-25 16:41:22] INFO: Binning character feature: character_some_low
+[2025-08-25 16:41:22] DEBUG: Created temporary column: character_some_low_tmp
+[2025-08-25 16:41:22] DEBUG: Standardizing missing values (NA, NULL, '', etc.) to NA.
+[2025-08-25 16:41:22] DEBUG: Grouping small categories for ' character_some_low ' with threshold 0.5 %
+[2025-08-25 16:41:22] DEBUG: 138 categories identified as 'smalls'.
+[2025-08-25 16:41:22] DEBUG: Performing mean target encoding.
+[2025-08-25 16:41:22] DEBUG: Training rpart regression tree for ' character_some_low '.
+[2025-08-25 16:41:22] DEBUG: Tree training complete. Found 2 bins.
+[2025-08-25 16:41:22] DEBUG: Merging bin assignments back into the main dataframe.
+[2025-08-25 16:41:22] DEBUG: Assigning 'smalls' and other unmapped values to bin 3
+[2025-08-25 16:41:22] INFO: Building SQL CASE statement for ' character_some_low '.
+[2025-08-25 16:41:22] DEBUG: Generating WHEN clauses for each bin.
+[2025-08-25 16:41:22] DEBUG: SQL statement for ' character_some_low ' finalized.
+[2025-08-25 16:41:22] INFO: All character features binned. Exiting character feature binning.
+[2025-08-25 16:41:22] INFO: Character feature binning complete.
+[2025-08-25 16:41:22] INFO: No binomial features to bin.
+[2025-08-25 16:41:22] INFO: Consolidating all generated SQL statements.
+[2025-08-25 16:41:22] INFO: Generating SQL file.
+[2025-08-25 16:41:22] INFO: SQL ready case statements generated and saved to: output/binned_features.sql
+[2025-08-25 16:41:22] INFO: Starting Phase 5: Generating Outputs.
+[2025-08-25 16:41:22] INFO: Generating Plotly plots for all binned features...
+[2025-08-25 16:41:22] DEBUG: Found 13 binned columns to generate plots for.
+[2025-08-25 16:41:22] DEBUG: Generating stability plot for: binned_integer_all_high
+[2025-08-25 16:41:22] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_integer_all_high'.
+[2025-08-25 16:41:22] DEBUG: Filtered stability data for 'binned_integer_all_high': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:22] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:22] INFO: Generating volume stability plot for feature 'binned_integer_all_high'.
+[2025-08-25 16:41:22] DEBUG: Volume stability plot successfully generated for 'binned_integer_all_high'.
+[2025-08-25 16:41:22] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:22] INFO: Generating mean target stability plot for 'binned_integer_all_high'.
+[2025-08-25 16:41:22] DEBUG: Mean target stability plot successfully generated for 'binned_integer_all_high'.
+[2025-08-25 16:41:22] INFO: Generating rank stability plot for 'binned_integer_all_high'.
+[2025-08-25 16:41:22] DEBUG: Rank stability plot successfully generated for 'binned_integer_all_high'.
+[2025-08-25 16:41:22] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:22] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_integer_all_high'.
+[2025-08-25 16:41:22] DEBUG: Generating stability plot for: binned_integer_dominant
+[2025-08-25 16:41:22] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_integer_dominant'.
+[2025-08-25 16:41:22] DEBUG: Filtered stability data for 'binned_integer_dominant': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:22] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:22] INFO: Generating volume stability plot for feature 'binned_integer_dominant'.
+[2025-08-25 16:41:23] DEBUG: Volume stability plot successfully generated for 'binned_integer_dominant'.
+[2025-08-25 16:41:23] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:23] INFO: Generating mean target stability plot for 'binned_integer_dominant'.
+[2025-08-25 16:41:23] DEBUG: Mean target stability plot successfully generated for 'binned_integer_dominant'.
+[2025-08-25 16:41:23] INFO: Generating rank stability plot for 'binned_integer_dominant'.
+[2025-08-25 16:41:23] DEBUG: Rank stability plot successfully generated for 'binned_integer_dominant'.
+[2025-08-25 16:41:23] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:23] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_integer_dominant'.
+[2025-08-25 16:41:23] DEBUG: Generating stability plot for: binned_integer_random
+[2025-08-25 16:41:23] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_integer_random'.
+[2025-08-25 16:41:23] DEBUG: Filtered stability data for 'binned_integer_random': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:23] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:23] INFO: Generating volume stability plot for feature 'binned_integer_random'.
+[2025-08-25 16:41:23] DEBUG: Volume stability plot successfully generated for 'binned_integer_random'.
+[2025-08-25 16:41:23] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:23] INFO: Generating mean target stability plot for 'binned_integer_random'.
+[2025-08-25 16:41:23] DEBUG: Mean target stability plot successfully generated for 'binned_integer_random'.
+[2025-08-25 16:41:23] INFO: Generating rank stability plot for 'binned_integer_random'.
+[2025-08-25 16:41:24] DEBUG: Rank stability plot successfully generated for 'binned_integer_random'.
+[2025-08-25 16:41:24] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:24] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_integer_random'.
+[2025-08-25 16:41:24] DEBUG: Generating stability plot for: binned_integer_some_low
+[2025-08-25 16:41:24] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_integer_some_low'.
+[2025-08-25 16:41:24] DEBUG: Filtered stability data for 'binned_integer_some_low': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:24] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:24] INFO: Generating volume stability plot for feature 'binned_integer_some_low'.
+[2025-08-25 16:41:24] DEBUG: Volume stability plot successfully generated for 'binned_integer_some_low'.
+[2025-08-25 16:41:24] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:24] INFO: Generating mean target stability plot for 'binned_integer_some_low'.
+[2025-08-25 16:41:24] DEBUG: Mean target stability plot successfully generated for 'binned_integer_some_low'.
+[2025-08-25 16:41:24] INFO: Generating rank stability plot for 'binned_integer_some_low'.
+[2025-08-25 16:41:24] DEBUG: Rank stability plot successfully generated for 'binned_integer_some_low'.
+[2025-08-25 16:41:24] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:24] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_integer_some_low'.
+[2025-08-25 16:41:24] DEBUG: Generating stability plot for: binned_numeric_all_high
+[2025-08-25 16:41:24] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_numeric_all_high'.
+[2025-08-25 16:41:24] DEBUG: Filtered stability data for 'binned_numeric_all_high': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:24] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:24] INFO: Generating volume stability plot for feature 'binned_numeric_all_high'.
+[2025-08-25 16:41:25] DEBUG: Volume stability plot successfully generated for 'binned_numeric_all_high'.
+[2025-08-25 16:41:25] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:25] INFO: Generating mean target stability plot for 'binned_numeric_all_high'.
+[2025-08-25 16:41:25] DEBUG: Mean target stability plot successfully generated for 'binned_numeric_all_high'.
+[2025-08-25 16:41:25] INFO: Generating rank stability plot for 'binned_numeric_all_high'.
+[2025-08-25 16:41:25] DEBUG: Rank stability plot successfully generated for 'binned_numeric_all_high'.
+[2025-08-25 16:41:25] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:25] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_numeric_all_high'.
+[2025-08-25 16:41:25] DEBUG: Generating stability plot for: binned_numeric_dominant
+[2025-08-25 16:41:25] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_numeric_dominant'.
+[2025-08-25 16:41:25] DEBUG: Filtered stability data for 'binned_numeric_dominant': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:25] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:25] INFO: Generating volume stability plot for feature 'binned_numeric_dominant'.
+[2025-08-25 16:41:25] DEBUG: Volume stability plot successfully generated for 'binned_numeric_dominant'.
+[2025-08-25 16:41:25] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:25] INFO: Generating mean target stability plot for 'binned_numeric_dominant'.
+[2025-08-25 16:41:25] DEBUG: Mean target stability plot successfully generated for 'binned_numeric_dominant'.
+[2025-08-25 16:41:25] INFO: Generating rank stability plot for 'binned_numeric_dominant'.
+[2025-08-25 16:41:25] DEBUG: Rank stability plot successfully generated for 'binned_numeric_dominant'.
+[2025-08-25 16:41:25] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:26] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_numeric_dominant'.
+[2025-08-25 16:41:26] DEBUG: Generating stability plot for: binned_numeric_random
+[2025-08-25 16:41:26] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_numeric_random'.
+[2025-08-25 16:41:26] DEBUG: Filtered stability data for 'binned_numeric_random': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:26] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:26] INFO: Generating volume stability plot for feature 'binned_numeric_random'.
+[2025-08-25 16:41:26] DEBUG: Volume stability plot successfully generated for 'binned_numeric_random'.
+[2025-08-25 16:41:26] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:26] INFO: Generating mean target stability plot for 'binned_numeric_random'.
+[2025-08-25 16:41:26] DEBUG: Mean target stability plot successfully generated for 'binned_numeric_random'.
+[2025-08-25 16:41:26] INFO: Generating rank stability plot for 'binned_numeric_random'.
+[2025-08-25 16:41:26] DEBUG: Rank stability plot successfully generated for 'binned_numeric_random'.
+[2025-08-25 16:41:26] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:26] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_numeric_random'.
+[2025-08-25 16:41:26] DEBUG: Generating stability plot for: binned_numeric_some_low
+[2025-08-25 16:41:26] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_numeric_some_low'.
+[2025-08-25 16:41:26] DEBUG: Filtered stability data for 'binned_numeric_some_low': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:26] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:26] INFO: Generating volume stability plot for feature 'binned_numeric_some_low'.
+[2025-08-25 16:41:27] DEBUG: Volume stability plot successfully generated for 'binned_numeric_some_low'.
+[2025-08-25 16:41:27] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:27] INFO: Generating mean target stability plot for 'binned_numeric_some_low'.
+[2025-08-25 16:41:27] DEBUG: Mean target stability plot successfully generated for 'binned_numeric_some_low'.
+[2025-08-25 16:41:27] INFO: Generating rank stability plot for 'binned_numeric_some_low'.
+[2025-08-25 16:41:27] DEBUG: Rank stability plot successfully generated for 'binned_numeric_some_low'.
+[2025-08-25 16:41:27] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:27] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_numeric_some_low'.
+[2025-08-25 16:41:27] DEBUG: Generating stability plot for: binned_weeks_since_registration_date
+[2025-08-25 16:41:27] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:27] DEBUG: Filtered stability data for 'binned_weeks_since_registration_date': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:27] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:27] INFO: Generating volume stability plot for feature 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:27] DEBUG: Volume stability plot successfully generated for 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:27] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:27] INFO: Generating mean target stability plot for 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:27] DEBUG: Mean target stability plot successfully generated for 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:27] INFO: Generating rank stability plot for 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:28] DEBUG: Rank stability plot successfully generated for 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:28] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:28] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_weeks_since_registration_date'.
+[2025-08-25 16:41:28] DEBUG: Generating stability plot for: binned_character_all_high
+[2025-08-25 16:41:28] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_character_all_high'.
+[2025-08-25 16:41:28] DEBUG: Filtered stability data for 'binned_character_all_high': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:28] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:28] INFO: Generating volume stability plot for feature 'binned_character_all_high'.
+[2025-08-25 16:41:28] DEBUG: Volume stability plot successfully generated for 'binned_character_all_high'.
+[2025-08-25 16:41:28] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:28] INFO: Generating mean target stability plot for 'binned_character_all_high'.
+[2025-08-25 16:41:28] DEBUG: Mean target stability plot successfully generated for 'binned_character_all_high'.
+[2025-08-25 16:41:28] INFO: Generating rank stability plot for 'binned_character_all_high'.
+[2025-08-25 16:41:28] DEBUG: Rank stability plot successfully generated for 'binned_character_all_high'.
+[2025-08-25 16:41:28] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:28] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_character_all_high'.
+[2025-08-25 16:41:28] DEBUG: Generating stability plot for: binned_character_dominant
+[2025-08-25 16:41:28] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_character_dominant'.
+[2025-08-25 16:41:28] DEBUG: Filtered stability data for 'binned_character_dominant': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:28] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:28] INFO: Generating volume stability plot for feature 'binned_character_dominant'.
+[2025-08-25 16:41:28] DEBUG: Volume stability plot successfully generated for 'binned_character_dominant'.
+[2025-08-25 16:41:28] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:28] INFO: Generating mean target stability plot for 'binned_character_dominant'.
+[2025-08-25 16:41:29] DEBUG: Mean target stability plot successfully generated for 'binned_character_dominant'.
+[2025-08-25 16:41:29] INFO: Generating rank stability plot for 'binned_character_dominant'.
+[2025-08-25 16:41:29] DEBUG: Rank stability plot successfully generated for 'binned_character_dominant'.
+[2025-08-25 16:41:29] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:29] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_character_dominant'.
+[2025-08-25 16:41:29] DEBUG: Generating stability plot for: binned_character_random
+[2025-08-25 16:41:29] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_character_random'.
+[2025-08-25 16:41:29] DEBUG: Filtered stability data for 'binned_character_random': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:29] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:29] INFO: Generating volume stability plot for feature 'binned_character_random'.
+[2025-08-25 16:41:29] DEBUG: Volume stability plot successfully generated for 'binned_character_random'.
+[2025-08-25 16:41:29] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:29] INFO: Generating mean target stability plot for 'binned_character_random'.
+[2025-08-25 16:41:29] DEBUG: Mean target stability plot successfully generated for 'binned_character_random'.
+[2025-08-25 16:41:29] INFO: Generating rank stability plot for 'binned_character_random'.
+[2025-08-25 16:41:29] DEBUG: Rank stability plot successfully generated for 'binned_character_random'.
+[2025-08-25 16:41:29] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:30] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_character_random'.
+[2025-08-25 16:41:30] DEBUG: Generating stability plot for: binned_character_some_low
+[2025-08-25 16:41:30] INFO: Entering function 'generate_stability_plots'. Preparing to generate stability plots for feature: 'binned_character_some_low'.
+[2025-08-25 16:41:30] DEBUG: Filtered stability data for 'binned_character_some_low': 5000 rows after removing NAs in date and feature columns.
+[2025-08-25 16:41:30] DEBUG: Date column 'order_date' in stability data confirmed/converted to Date type.
+[2025-08-25 16:41:30] INFO: Generating volume stability plot for feature 'binned_character_some_low'.
+[2025-08-25 16:41:30] DEBUG: Volume stability plot successfully generated for 'binned_character_some_low'.
+[2025-08-25 16:41:30] INFO: Target column 'price' provided. Generating mean target and rank stability plots.
+[2025-08-25 16:41:30] INFO: Generating mean target stability plot for 'binned_character_some_low'.
+[2025-08-25 16:41:30] DEBUG: Mean target stability plot successfully generated for 'binned_character_some_low'.
+[2025-08-25 16:41:30] INFO: Generating rank stability plot for 'binned_character_some_low'.
+[2025-08-25 16:41:30] DEBUG: Rank stability plot successfully generated for 'binned_character_some_low'.
+[2025-08-25 16:41:30] DEBUG: Combining all three stability plots into a subplot.
+[2025-08-25 16:41:30] INFO: Combined volume, mean CR, and rank stability plots generated for 'binned_character_some_low'.
+[2025-08-25 16:41:30] DEBUG: Combining individual plots into a single HTML widget.
+[2025-08-25 16:41:32] INFO: HTML binned feature stability report generated and saved to: output/binning_report.html
+[2025-08-25 16:41:32] INFO: Script finished successfully.
+[2025-08-25 16:41:32] CRITICAL: An unexpected error occurred in the main function: multi-argument returns are not permitted
+[2025-08-25 16:41:32] CRITICAL: Script execution halted.
