@@ -291,7 +291,7 @@ A companion CSV file is generated with all the summarized data. This is useful f
 
 This file contains a SQL `CASE` statement for every binned feature. This is not an approximation, it is the exact logic required to replicate the feature in a database environment.
 
-* [**View Sample Summary**](https://github.com/rao-anas-riaz/R-Feature-Binning-Rpart-SQL-Case-Statements/blob/main/report_outputs/binned_features.sql)
+* [**View Sample SQL Case Statements**](https://github.com/rao-anas-riaz/R-Feature-Binning-Rpart-SQL-Case-Statements/blob/main/report_outputs/binned_features.sql)
 
 ## Dependencies
 The script will automatically check for and offer to install the following required R packages:
@@ -308,4 +308,5 @@ The script will automatically check for and offer to install the following requi
 
 ### License
 This project is made available for informational purposes only. The intellectual property and source code remain the exclusive property of the author. No part of the source code may be copied, distributed, or modified without explicit permission.
+
 
