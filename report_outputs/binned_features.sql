@@ -71,10 +71,10 @@ END) AS `binned_numeric_some_low`,
 (CASE 
   WHEN (`a`.`registration_date` IS NULL 
   OR `a`.`registration_date` IN ('na', 'NA', 'null', 'NULL', 'none', 'NONE', 'n/a', 'N/A', 'nan', 'NaN', '', ' ')) THEN 'NA' 
-  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date``) < (15.79)) THEN 1 
-  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date``) < (40.07)) THEN 2 
-  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date``) < (52.64)) THEN 3 
-  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date``) < (53.21)) THEN 4 
+  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date`) < (15.79)) THEN 1 
+  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date`) < (40.07)) THEN 2 
+  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date`) < (52.64)) THEN 3 
+  WHEN (1.0 * TIMESTAMPDIFF(WEEK, IFNULL(`a`.`registration_date`, 'NA'), `a`.`order_date`) < (53.21)) THEN 4 
   ELSE 5
 END) AS `binned_weeks_since_registration_date`,
 (CASE 
@@ -103,3 +103,4 @@ END) AS `binned_character_random`,
   WHEN `a`.`character_some_low` IN ('eH0jA0iY', 'onz23CmL', '3wTPwFsX', 'eBgjcPDS', '7BzcfEYN', 'K1NzkLDV', 'dOCp6DQH', 'iGnwEPq9', 'BGYJYWnB', 'LmP3US56', 'B0eiaHaU', 'RMswfLGh', 'IXe9hsMP', 'oUjokKpM', 'qhEMlRTg', 'Ka5AwKQX', '6HOZtYY3', 'ME1LkkOb', '7IutlfUp', 'ojGWgLhG', 'XEzpblVk', 'vftZoXhl', '1LmRjBdT', 'gjtorkTT', 'WAqTcER7', 'OMeihlGV', 'Rv5gE8zG', 'EHW3vxYo', 'cYjgdAzC', '9eurxGJe', 'kylOG6YH', '2hEO68jQ', 'DAytSPRZ', 'JPxan0aE', 'qH4JE9Il', 'YF1TiUTm', 'pBrBNdVx', 'a0zHKOxO', 'tpgPsRIw', 'EV2490ix', 'K7lRs4we', '8JfxGkhC', 'yaMgAk6Q', 'I9Ockicg', 'BIZ4N2o7', 'mn73i6qJ', 'Cpy14vaz', 'VAQUiq28') THEN 2 
   ELSE 3 
 END) AS `binned_character_some_low`,
+
